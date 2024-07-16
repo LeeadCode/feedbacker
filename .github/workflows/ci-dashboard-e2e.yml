@@ -28,7 +28,7 @@ jobs:
       - name: Run project locally
         run: |
           npm install serve
-          npx serve dist -s -p 8080 
+          npx serve dist -s -p 8080 &
 
       - name: Run tests
         uses: cypress-io/github-action@v2
