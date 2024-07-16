@@ -28,10 +28,9 @@ jobs:
       - name: Run project locally
         run: |
           npm install serve
-          $(npm bin)/serve dist -s -p 8080 &
+          npm exec/serve dist -s -p 8080 &
 
       - name: Run tests
-        wait-on: "http://localhost:8080"
         uses: cypress-io/github-action@v2
         with:	
           working-directory: dashboard
