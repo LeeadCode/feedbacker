@@ -35,7 +35,7 @@
             :color="brandColors.darkgray"
             size="20"
             class="cursor-pointer"
-            @click="handleCopy"
+            @click="handle Copy"
           />
           <Icon
             id="generate-apikey"
@@ -43,7 +43,7 @@
             :color="brandColors.darkgray"
             size="20"
             class="cursor-pointer"
-            @click="handleGenerateApiKey"
+            @click="handleGenerate ApiKey"
           />
         </div>
       </div>

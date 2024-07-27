@@ -13,7 +13,7 @@ const API_ENVS = {
 }
 
 const httpClient = axios.create({
-  baseURL: API_ENVS[process.env.NODE_ENV] ?? API_ENVS.local,
+  baseURL: API_ENVS[process.env.NODE_ENV] || API_ENVS.local,
 });
 
 httpClient.interceptors.request.use(config => {
@@ -40,10 +40,10 @@ httpClient.interceptors.response.use(
       setGlobalLoading(false)
       throw new error(error.message)
     }
-
+ 
     if(error.response.status === 401) router.push({name: 'Home'})
-      
-    setGlobalLoading(false)  
+    setGlobalLoading(false) 
+  
     return error;
   }
 );
