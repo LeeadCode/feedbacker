@@ -12,9 +12,10 @@ Projeto criado durante o [curso de Vue.js 3]([https://link](https://treinamento.
 ![Logo](https://raw.githubusercontent.com/LeeadCode/feedbacker/main/dashboard/src/assets/images/logo_white.png)
 
 
-## Demonstração
+## Demo
+https://feedbackeer.netlify.app/
 
-em processo...
+para testar, pode utilizar o login igor@igor.me e a senha 1234 
 
 
 ## Stack utilizada
