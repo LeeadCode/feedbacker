@@ -5,7 +5,7 @@
 
 <script setup>
 import { useRoute, useRouter } from 'vue-router';
-import { watch } from 'vue'
+import { onMounted, watch } from 'vue'
 import ModalFactory from './components/ModalFactory'
 import Services from './Services';
 import { clearCurrentUser, setCurrentUser } from './Store/user';
@@ -30,6 +30,16 @@ async function reloadUser(onError) {
     setCurrentUser(data)
   }
 }
+
+onMounted(() => {
+  let FeedbackWidget = document.createElement('script')
+  FeedbackWidget.setAttribute('defer', '')
+  FeedbackWidget.setAttribute('async', '')
+  FeedbackWidget.setAttribute('onload', "init('fcd5015c-10d3-4e9c-b395-ec7ed8850165')")
+  FeedbackWidget.setAttribute('src', 'https://feedbackeer-widget.netlify.app/init.js')
+
+  document.body.appendChild(FeedbackWidget)
+})
 
 watch(() => route.path, async () => {
   if(route.meta.hasAuth) {

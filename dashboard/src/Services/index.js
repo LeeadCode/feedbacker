@@ -38,7 +38,7 @@ httpClient.interceptors.response.use(
 
     if (canThrowAnError) {
       setGlobalLoading(false)
-      throw new error(error.message)
+      throw new Error(error.message)
     }
  
     if(error.response.status === 401) router.push({name: 'Home'})

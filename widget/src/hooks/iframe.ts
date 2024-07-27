@@ -35,7 +35,7 @@ export default function useIFrameControl(): IFrameControl {
   function notifyClose() {
     window.parent.postMessage({
       isWidget: true,
-      isOpen: true
+      isOpen: false
     }, '*')
   }
 
