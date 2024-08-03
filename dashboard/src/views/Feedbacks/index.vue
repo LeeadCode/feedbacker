@@ -9,8 +9,8 @@
   />
 
   <div class="flex justify-center w-full pb-20">
-    <div class="grid grid-cols-4 gap-2 w-4/5 max-w-6xl py-10">
-      <div>
+    <div class="md:grid md:grid-cols-4 w-full gap-2 py-10">
+      <div class="px-8">
         <h1 class="text-3xl font-black text-brand-darkgray">
           Listagem
         </h1>
@@ -24,7 +24,7 @@
           </template>
         </Suspense>
       </div>
-      <div class="col-span-3 px-10 pt-20">
+      <div class="col-span-3 md:px-10 pt-10 md:pt-20">
         <p 
           v-if="hasErros"
           class="text-xl text-center text-gray-800 font-regular"

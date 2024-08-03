@@ -2,11 +2,22 @@
     <header class="header">
         <div class="header-group">
             <div class="flex items-center justify-between py-10">
-                <div class="w-28 lg:w-36">
+              <div class="w-28 lg:w-36">
                 <img class="w-full" src="../../assets/images/logo_white.png" alt="logo">
-            </div>
+              </div>
 
-            <div class="flex">
+              <HamburgerMenu 
+                class="md:hidden"
+                @toggle="toggleNav"
+              />
+
+            <div 
+              class="
+                absolute md:static bottom-0 top-24 h-0 md:h-auto gap-5 md:gap-0 
+                px-5 md:px-0 right-0 w-3/6 md:w-auto flex flex-col md:flex-row
+              "
+              :class="{'hidden md:block': !navActive}"
+            >
                 <button 
                     id="header-login-button"
                     class="button bg-white text-brand-main"
@@ -47,11 +58,15 @@
     </header>
 </template>
   
-<script>
-export default {
-    setup(_, {emit}){
-        return {emit}
-    }
+<script setup>
+import { ref } from 'vue';
+import HamburgerMenu from '@/components/HamburguerMenu'
+
+const navActive = ref(false) 
+const emit = defineEmits(['login', 'create-account'])
+
+function toggleNav() {
+  navActive.value = !navActive.value
 }
 </script>
 
@@ -66,7 +81,7 @@ export default {
 }
 
 .header-group{
-    @apply flex flex-col w-4/5 max-w-6xl;
+    @apply flex flex-col w-5/6 md:w-4/5 max-w-6xl;
 }
 
 @media (min-width: 640px){

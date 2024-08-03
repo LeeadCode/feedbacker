@@ -1,11 +1,27 @@
 <template>
-  <div class="flex items-center justify-between w-full md:w-4/5 max-w-6xl py-10">
+  <div class="flex items-center justify-between w-5/6 md:w-4/5 max-w-6xl py-10">
     <div class="w-28 lg:w-36">
       <img class="w-full" src="../../assets/images/logo_white.png" alt="Logo Feedbacker">
     </div>
 
-    <div class="flex">
-      <ul class="flex list-none">
+    <HamburgerMenu 
+      class="md:hidden"
+      @toggle="toggleNav"
+    />
+
+    <div 
+      class="
+        absolute md:static bottom-0 left-0 top-24 h-0 md:h-auto md:gap-0 
+        px-5 md:px-0 right-0 md:w-auto flex flex-col md:flex-row    
+      "
+      :class="{'hidden md:block': !navActive}"
+    >
+      <ul 
+        class="
+          flex flex-col md:flex-row list-none bg-brand-main gap-2 md:gap-0
+          rounded-xl p-2 md:p-0 items-center
+        "
+      >
         <li
           @click="() => router.push({ name: 'Credentials' })"
           class="links text-white"
@@ -33,11 +49,13 @@
 </template>
 
 <script setup>
-import useStore from '@/hooks/useStore';
-import { clearCurrentUser } from '@/Store/user';
-import { computed } from 'vue';
-import { useRouter } from 'vue-router';
+import HamburgerMenu from '@/components/HamburguerMenu'
+import useStore from '@/hooks/useStore'
+import { clearCurrentUser } from '@/Store/user'
+import { computed, ref } from 'vue'
+import { useRouter } from 'vue-router'
 
+const navActive = ref(false) 
 const router = useRouter()
 const store = useStore('User')
 
@@ -52,6 +70,10 @@ const logoutLabel = computed(() => {
 function handleLogout () {
   clearCurrentUser()
   router.push({name: 'Home'})
+}
+
+function toggleNav() {
+  navActive.value = !navActive.value
 }
 
 </script>

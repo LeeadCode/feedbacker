@@ -15,21 +15,21 @@
           {{ feedback.text }}
     </div>
 
-    <div 
+    <div
       :class="{
         'animate__fadeOut': isClosing
       }"
-      class="flex justify-between w-full mt-8 animate__animated animate__fadeInUp animate__faster"
+      class="flex flex-col gap-2 justify-between w-full mt-8 animate__animated animate__fadeInUp animate__faster"
       v-if="isOpen"
     >
-      <div class="flex flex-col w-1/2">
+      <div class="flex flex-col md:flex-row w-full gap-2">
         <div class="flex flex-col">
           <span class="font-bold text-gray-800 uppercase select-none">
             Página
           </span>
-          <span class="font-medium text-gray-700 uppercase select-none">
+          <div class="font-medium text-gray-700 uppercase select-none truncate">
             {{ feedback.page }}
-          </span>
+          </div>
         </div>
  
         <div class="flex flex-col">
