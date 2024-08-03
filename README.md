@@ -37,7 +37,7 @@ para testar, pode utilizar o login igor@igor.me e a senha 1234
 - [x]  Rolagem Infinita na listagem de feedbacks
 - [x]  Testes E2E
 - [x]  Testes Unitários
-- [ ]  Ajuste para telas mobile
+- [x]  Ajuste para telas mobile
 
 
 ## Documentação de cores
